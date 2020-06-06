@@ -34,4 +34,4 @@ public function store(Request $request)
 
         return back();
     }
-}
+}    
