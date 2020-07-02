@@ -6,23 +6,19 @@ use Illuminate\Http\Request;
 
 class FavoritesController extends Controller
 {
-    public function favorite(Request $request)
+    public function store(Request $request, $micropostid)
     {
+        \Auth::user()->favorite($micropostid);
+         return back();
         
-        
-       
-        ]);
+    }
 
-        return back();
-    }//
-    
-    public function unfaborite($id)
+    public function destroy($micropostid)
     {
-        
-         $id->delete();
-
+      \Auth::user()->unfavorite($micropostid);
         return back();
     }
-    
+
+        
     
 }
